@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        #TitleMenu{
+            color: black;
+        }
+        .imagecontainer {
+            align-items: center; 
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 5px;
+        }
+
+        .image{
+            padding: 20px;
+        }
+
+        #img {
+         max-width: 100%;
+         max-height:100%;
+         width: 270px;
+        height: 270px;
+        }
+
+        .text {
+        font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h1 id="TitleMenu" >Menu Item</h1>
+    <center>
+    <h1 id="TitleMenu">{{ info.Name }}</h1>
+    </center>
+    <div class="imagecontainer">
+        <div class="image">
+            <img id='img' src='/media/{{ info.Image }}'>
+    </div>
+
+    <div class="text">
+        <h5>{{ info.Description }}</h5>
+        <h5>Price : ${{ info.Price }}</h5>
+    </div>
+
+<br>
+</body>
+<br>
+<div class="container">
+{% include 'footer.html' %}
+</div>
+</html>
